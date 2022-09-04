@@ -23,7 +23,10 @@
 # Задача3
 
 # n  = int(input())
-# print({i: round((1 * 1 / i) ** i, 4) for i in range(1, n+1)})
+# dc = ((1 * 1 / i) ** i for i in range(1, n+1))
+# print(sum(i for i in dc))
+
+
 
 
 
