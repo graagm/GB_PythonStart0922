@@ -34,7 +34,20 @@
 
 # import random
 
-# s2 = ' + '.join(filter(lambda k: k[0] != '0', list(str(random.randint(0, 9)) + 'x^'f'{str(i)}' for i in range(2, int(input()) + 1))[::-1])) + ' + ' + \
+# superscript_map = {
+#     "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶",
+#     "7": "⁷", "8": "⁸", "9": "⁹"}
+
+# n = int(input('Введите старшую степень многочлена:  '))
+
+
+# if n > 9:
+#     for i in range(10, n + 1):
+#         str1 = ''.join([superscript_map[j] for j in str(i)])
+#         superscript_map[str(i)] = str1
+
+
+# s2 = ' + '.join(filter(lambda k: k[0] != '0', list(str(random.randint(0, 25)) + 'x'f'{superscript_map[str(i)]}' for i in range(2, n + 1))[::-1])) + ' + ' + \
 #      (str(random.randint(1, 9)) + 'x') + ' + ' + str(random.randint(1, 9)) + '  = 0'
 
 # file4 = open('task4.txt', 'w', encoding='UTF-8')
