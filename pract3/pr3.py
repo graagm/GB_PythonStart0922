@@ -19,14 +19,15 @@
 
 # Задача 2
 # import random
-#
-# sp = [random.randint(2, 10) for i in range(9)]
-#
+
+# sp = [random.randint(2, 10) for i in range(11)]
+
 # print(sp)
-#
+
 # ls_sp = len(sp)
-#
-# for i in range(ls_sp // 2 + 1):
+# rng = ls_sp // 2 + ls_sp % 2 
+
+# for i in range(rng):
 #     print(sp[i] * sp[ls_sp - i - 1])
 
 
