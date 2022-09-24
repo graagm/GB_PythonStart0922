@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %}</title>
+        {% block description %}<meta name="description" content="">{% endblock %}
+        {% block words %}<meta name="words" content="">{% endblock %}
+		<link  rel="stylesheet"  href="{% static 'tel_giude/css/btstrap5css/bootstrap-reboot.css'%}" type="text/css"> 
+		<link  rel="stylesheet"  href="{% static 'tel_giude/css/btstrap5css/bootstrap.css'%}" type="text/css"> 
+		<script src="{% static 'tel_giude/js/jquery3.6.0.min.js' %}"></script>
+		<script src="{% static 'tel_giude/js/btstrap5js/bootstrap.bundle.js' %}"></script>
+		{{form.media}}
+		
+	</head>
+    <header>
+		<nav>
+			{% block nav %}<ul class="nav nav-tabs">
+							  <li class="nav-item">
+								<a class="nav-link active" aria-current="page"  href=""><strong>Все записи</strong></a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="">логин</a>
+							  </li>
+							</ul>
+			{% endblock %}
+		</nav>
+    </header>
+    <body>
+	    {% block h1 %} {% endblock %}
+		{% block body %} {% endblock %}
+    </body>
+</html>
