@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'guides_phones',
     'crispy_forms',
     'phonenumber_field',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
