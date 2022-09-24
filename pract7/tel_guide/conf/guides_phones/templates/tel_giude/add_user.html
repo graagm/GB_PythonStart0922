@@ -1,0 +1,18 @@
+{% extends  'lay.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+        {% block title %}добавление нового пользователя{% endblock %}
+        {% block description %}<meta name="description" content="пользовательские телефоны">{% endblock %}
+        {% block words %}<meta name="words" content="GB, tested">{% endblock %}
+	   
+        {% block h_1 %}<h1 class="h1" style="visibility: hidden;">добавление данных</h1>{% endblock %}
+
+        {% block body %}
+            <form method="post">
+                {%csrf_token%}
+                {{form|crispy}}
+                <br>
+                <input type="submit" value="Добавить пользователя">
+                </form>
+	  {% endblock %}
+ 

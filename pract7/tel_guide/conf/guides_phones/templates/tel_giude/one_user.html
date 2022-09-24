@@ -1,0 +1,21 @@
+{% extends  'lay.html' %}
+{% load static %}
+        {% block title %}данные пользователя {{user.user_name}}{% endblock %}
+        {% block description %}<meta name="description" content="телефон">{% endblock %}
+        {% block words %}<meta name="words" content="GB, tested">{% endblock %}
+	   
+        {% block h_1 %}<h1 class="h1" style="visibility: hidden;">имя, почта и телефон</h1>{% endblock %}
+
+        {% block body %}
+        <h4 class="title">данные пользователя</h4><br>
+        <div class="row">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{user.user_name}}</h5>
+                <h5 class="card-title">{{user.phone_number}}</h5>
+                <h5 class="card-title">{{user.email}}</h5>
+                <a href="{% url 'user_update' user.pk %}" class="btn btn-primary">Обновить пользователя</a>
+              </div>
+            </div>
+        </div>
+	  {% endblock %}

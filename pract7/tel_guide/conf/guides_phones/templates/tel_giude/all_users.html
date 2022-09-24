@@ -1,0 +1,21 @@
+{% extends  'lay.html' %}
+{% load static %}
+        {% block title %}все данне с базы{% endblock %}
+        {% block description %}<meta name="description" content="пользовательские телефоны">{% endblock %}
+        {% block words %}<meta name="words" content="GB, tested">{% endblock %}
+	   
+        {% block h_1 %}<h1 class="h1" style="visibility: hidden;">справочник всех телефонов</h1>{% endblock %}
+
+        {% block body %}
+        <h4 class="title">Список пользователей</h4><br>
+        <div class="row">
+        {% for user in users_list %}
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{user.user_name}}</h5>
+                <a href="{% url 'one_user' user.pk %}" class="btn btn-primary">Посмотреть пользователя</a>
+                <a href="{% url 'user_update' user.pk %}" class="btn btn-dark">Обновить пользователя</a>
+              </div>
+            </div>
+        {% endfor %}
+	  {% endblock %}
