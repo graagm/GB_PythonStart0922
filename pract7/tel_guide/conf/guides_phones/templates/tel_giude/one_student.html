@@ -1,0 +1,22 @@
+{% extends  'lay.html' %}
+{% load static %}
+        {% block title %}данные Студента {{student.user}}{% endblock %}
+        {% block description %}<meta name="description" content="студенческий">{% endblock %}
+        {% block words %}<meta name="words" content="GB, tested">{% endblock %}
+	   
+        {% block h_1 %}<h1 class="h1" style="visibility: hidden;">инфо о студенте</h1>{% endblock %}
+
+        {% block body %}
+        <h4 class="title">данные студента</h4><br>
+        <div class="row">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Имя студента {{student.user}}</h5>
+                <h5 class="card-title">Курс {{student.corse}}</h5>
+                <h5 class="card-title">Факультет {{student.facultet}}</h5>
+                <h5 class="card-title"> Форма обучения {% if student.budjet %} Бюджет {% else %} Платное обучение {% endif %}</h5>
+                <a href="{% url 'student_update' student.pk %}" class="btn btn-primary">Обновить Студента</a>
+              </div>
+            </div>
+        </div>
+	  {% endblock %}

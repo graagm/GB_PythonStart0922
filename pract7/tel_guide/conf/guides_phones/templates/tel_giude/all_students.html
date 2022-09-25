@@ -1,0 +1,21 @@
+{% extends  'lay.html' %}
+{% load static %}
+        {% block title %}все Студенты{% endblock %}
+        {% block description %}<meta name="description" content="студенческий список">{% endblock %}
+        {% block words %}<meta name="words" content="GB, tested">{% endblock %}
+	   
+        {% block h_1 %}<h1 class="h1" style="visibility: hidden;">справочник студентов</h1>{% endblock %}
+
+        {% block body %}
+        <h4 class="title">Список студентов</h4><br>
+        <div class="row">
+        {% for student in students_list %}
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{student.user}}</h5>
+                <a href="{% url 'one_student' student.pk %}" class="btn btn-primary">Данные студента</a>
+                <a href="{% url 'student_update' student.pk %}" class="btn btn-dark">Обновить студента</a>
+              </div>
+            </div>
+        {% endfor %}
+	  {% endblock %}

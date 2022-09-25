@@ -15,3 +15,32 @@ class UsersPhone(models.Model):
 
     def __str__(self):
         return self.user_name
+
+
+class Students(models.Model):
+
+    class Course(models.TextChoices):
+        первый = 'fi'
+        второй = 'sc'
+        третий = 'tr'
+        четвертый = 'fo'
+        пятый = 'fv'
+
+    class Facultet(models.TextChoices):
+        математика = 'ma'
+        литература = 'li'
+        история = 'hi'
+        философия = 'ph'
+        лингвистика = 'la'
+
+    user = models.OneToOneField(UsersPhone, verbose_name='студент', on_delete=models.PROTECT, related_name='student_name')
+    corse = models.CharField(max_length=2, null=False, blank=False, choices=Course.choices, default='fi', verbose_name='курс студента')
+    facultet = models.CharField(max_length=2, null=False, blank=False, choices=Facultet.choices, default='fi', verbose_name='факультет')
+    budjet = models.BooleanField(default=False, verbose_name='бюджетник?')
+    
+    class Meta:
+        verbose_name = 'студент'
+        verbose_name_plural = 'список студентов'
+
+    def __str__(self):
+        return self.user

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from guides_phones.models import UsersPhone
+from guides_phones.models import UsersPhone, Students
 # Register your models here.
 
 
@@ -8,3 +8,10 @@ class UsersPhoneAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UsersPhone, UsersPhoneAdmin)
+
+
+class StudentsAdmin(admin.ModelAdmin):
+    list_display = ('user', 'corse', 'facultet', 'budjet')
+
+
+admin.site.register(Students, StudentsAdmin)
