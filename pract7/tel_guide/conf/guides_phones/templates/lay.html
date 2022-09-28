@@ -10,11 +10,15 @@
 		<link  rel="stylesheet"  href="{% static 'tel_giude/css/btstrap5css/bootstrap-reboot.css'%}" type="text/css"> 
 		<link  rel="stylesheet"  href="{% static 'tel_giude/css/btstrap5css/bootstrap.css'%}" type="text/css"> 
 		<script src="{% static 'tel_giude/js/jquery3.6.0.min.js' %}"></script>
+		<script src="{% static 'tel_giude/js/jquery.ui.js' %}"></script>
+		<link  rel="stylesheet"  href="{% static 'tel_giude/css/jquery-ui.css'%}" type="text/css"> 
+		<link  rel="stylesheet"  href="{% static 'tel_giude/css/siteSELF.css'%}" type="text/css"> 
 		<script src="{% static 'tel_giude/js/btstrap5js/bootstrap.bundle.js' %}"></script>
 		{{form.media}}
 		
 	</head>
     <header>
+		<div class="container">
 		<nav>
 			{% block nav %}<ul class="nav nav-tabs">
 				<li class="nav-item">
@@ -35,9 +39,13 @@
 			</ul>
 			{% endblock %}
 		</nav>
+	</div>
     </header>
     <body>
-	    {% block h1 %} {% endblock %}
-		{% block body %} {% endblock %}
+		<div class="container">
+			{% block h1 %} {% endblock %}
+			{% block body %} {% endblock %}
+		</div>
     </body>
 </html>
+{% block script %} {% endblock %}

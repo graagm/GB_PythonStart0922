@@ -10,7 +10,7 @@
         <h4 class="title">Список пользователей</h4><br>
         <div class="row">
         {% for user in users_list %}
-            <div class="card" style="width: 18rem;">
+            <div class="card self-card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">{{user.user_name}}</h5>
                 <a href="{% url 'one_user' user.pk %}" class="btn btn-primary">Посмотреть пользователя</a>

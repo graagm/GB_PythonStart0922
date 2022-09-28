@@ -10,7 +10,7 @@
         <h4 class="title">Список студентов</h4><br>
         <div class="row">
         {% for student in students_list %}
-            <div class="card" style="width: 18rem;">
+            <div class="card self-card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">{{student.user}}</h5>
                 <a href="{% url 'one_student' student.pk %}" class="btn btn-primary">Данные студента</a>
